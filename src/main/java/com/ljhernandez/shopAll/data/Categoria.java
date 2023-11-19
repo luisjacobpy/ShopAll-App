@@ -9,7 +9,7 @@ import lombok.*;
 @Table(name = "categoria")
 public class Categoria {
     @Id
-    @Column(name = "idCategoria", nullable = false)
+    @Column(name = "idCategoria", nullable = false) //OneToMany --> Productos idCategoria INT
     private Integer idCategoria;
 
     @Column(name ="nombreCategoria", nullable = false, length = 45)

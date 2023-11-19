@@ -6,15 +6,18 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "busquedaproductos")
+@Table(name = "busquedaProductos")
 public class BusquedaProductos {
 
     @Id
     @Column(name = "idBusqueda", nullable = false)
-    private Integer idCarrito;
+    private Integer idBusqueda;
 
-    @Column(name ="idUsuario", nullable = false)
-    private Integer idUsuario;
+    @Column(name ="idProducto", nullable = false)
+    private Integer idProducto;
+
+    @Column(name ="palabraClave", nullable = false, length = 45)
+    private String palabraClave;
 
 
 }
