@@ -11,7 +11,7 @@ import lombok.Setter;
 @Table(name = "usuario")
 public class Usuario {
     @Id
-    @Column(name = "idUsuario", nullable = false)
+    @Column(name = "idUsuario", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUsuario;
 
@@ -24,7 +24,7 @@ public class Usuario {
     @Column(name ="apellidoMaterno", nullable = false, length = 45)
     private String apellidoMaterno;
 
-    @Column(name ="correo", nullable = false, length = 45)
+    @Column(name ="correo", nullable = false, unique = true, length = 45)
     private String correo;
 
     @Column(name ="contrasena", nullable = false, length = 45)

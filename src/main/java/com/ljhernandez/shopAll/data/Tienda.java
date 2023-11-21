@@ -10,7 +10,7 @@ import lombok.Setter;
 public class Tienda {
 
     @Id
-    @Column(name = "idTienda", nullable = false)
+    @Column(name = "idTienda", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTienda;
 

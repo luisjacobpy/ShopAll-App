@@ -11,11 +11,11 @@ import lombok.Setter;
 @Table(name = "productos")
 public class Producto {
     @Id
-    @Column(name = "idProducto", nullable = false)
+    @Column(name = "idProducto", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Al registrar un producto que sea la base de datos la que me regrese el numero
     private Integer idProducto;
 
-    @Column(name ="nombreProducto", nullable = false, length = 45)
+    @Column(name ="nombreProducto", nullable = false, unique = true, length = 45)
     private String nombreProducto;
 
     @Column(name ="descripcionProducto", nullable = false, length = 100)

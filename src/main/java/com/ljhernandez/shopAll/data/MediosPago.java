@@ -12,7 +12,8 @@ import java.util.Date;
 @Table(name = "mediosPago")
 public class MediosPago {
     @Id
-    @Column(name = "idMediosPago", nullable = false)
+    @Column(name = "idMediosPago", unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMediosPago;
 
     @Column(name = "idUsuario", nullable = false)
