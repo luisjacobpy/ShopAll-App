@@ -1,12 +1,12 @@
 package com.ljhernandez.shopAll.data;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+
+import java.math.BigDecimal;
 
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "productos")
 public class Producto {
@@ -22,10 +22,8 @@ public class Producto {
     private String descripcionProducto;
 
     @Column(name = "precioUnitario", nullable = false)
-    private double precioUnitario;
+    private BigDecimal precioUnitario;
 
-//    @Column(name = "idCategoria", nullable = false)
-//    private Integer idCategoria;
    @ManyToOne(fetch = FetchType.LAZY, optional = false)
    @JoinColumn(name = "idCategoria", nullable = false)
    private Categoria idCategoria; // Estamos instanciando un Objeto Categoria, para mapearse la relacion por objetos

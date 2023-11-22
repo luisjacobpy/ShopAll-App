@@ -12,12 +12,13 @@ public class DetallesCarrito {
     @Column(name = "idDetallesCarrito", nullable = false)
     private Integer idDetallesCarrito;
 
-    @Column(name = "idCarrito", nullable = false)
-    private Integer idCarrito;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "idCarrito", nullable = false)
+    private Carrito idCarrito;
 
-
-    @Column(name = "idProducto", nullable = false)
-    private Integer idProducto;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "idProducto", nullable = false)
+    private Producto idProducto;
 
     @Column(name = "cantidad", nullable = false)
     private Integer cantidad;

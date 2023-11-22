@@ -5,8 +5,7 @@ import lombok.*;
 
 
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "detallesInventario")
 public class DetallesInventario {
@@ -14,11 +13,13 @@ public class DetallesInventario {
     @Column(name = "idDetallesInventario", nullable = false)
     private Integer idDetallesInventario;
 
-    @Column(name = "IDVendedor", nullable = false)
-    private Integer idVendedor;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "IDVendedor", nullable = false)
+    private InformacionVendedor idVendedor;
 
-    @Column(name = "IDProducto", nullable = false)
-    private Integer idProducto;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "IDProducto", nullable = false)
+    private Producto idProducto;
 
     @Column(name ="stockDisponible", nullable = false)
     private Integer cantidadDisponible;

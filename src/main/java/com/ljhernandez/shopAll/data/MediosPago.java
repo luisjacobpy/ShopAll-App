@@ -16,8 +16,9 @@ public class MediosPago {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMediosPago;
 
-    @Column(name = "idUsuario", nullable = false)
-    private Integer idUsuario;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "idUsuario", nullable = false)
+    private Usuario idUsuario;
 
     @Column(name ="tipoMedio", nullable = false, length = 45)
     private String tipoMedio;

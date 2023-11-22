@@ -12,8 +12,11 @@ public class Carrito {
     @Column(name = "idCarrito", nullable = false)
     private Integer idCarrito;
 
-    @Column(name ="idUsuario", nullable = false)
-    private Integer idUsuario;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name ="idUsuario", nullable = false)
+    private Usuario idUsuario;
+
+
 
 } // Fin de la clase Carrito
 

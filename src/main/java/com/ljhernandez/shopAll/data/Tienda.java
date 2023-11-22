@@ -14,8 +14,9 @@ public class Tienda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTienda;
 
-    @Column(name ="idUsuario", nullable = false, length = 45)
-    private Integer idUsuario;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name ="idUsuario", nullable = false, length = 45)
+    private Usuario idUsuario;
 
     @Column(name ="nombreTienda", nullable = false, length = 45)
     private String nombreTienda;

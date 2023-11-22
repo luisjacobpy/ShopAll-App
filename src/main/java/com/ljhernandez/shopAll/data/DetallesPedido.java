@@ -3,11 +3,11 @@ package com.ljhernandez.shopAll.data;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "detallesPedido")
 public class DetallesPedido {
@@ -15,17 +15,19 @@ public class DetallesPedido {
     @Column(name = "idDetallesPedido", nullable = false)
     private Integer idDetallesPedido;
 
-    @Column(name = "idPedido", nullable = false)
-    private Integer idPedido;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "idPedido", nullable = false)
+    private Pedido idPedido;
 
-    @Column(name = "IdProducto", nullable = false)
-    private Integer idProducto;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "IdProducto", nullable = false)
+    private Producto idProducto;
 
     @Column(name ="cantidad", nullable = false)
     private Integer cantidad;
 
     @Column(name ="precioUnitario", nullable = false)
-    private DecimalFormat precioUnitario;
+    private BigDecimal precioUnitario;
 
 } // Fin de la class DetallesInventario
 

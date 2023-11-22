@@ -1,9 +1,6 @@
 package com.ljhernandez.shopAll.data;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,8 +14,9 @@ public class InformacionVendedor {
     @Column(name = "idInformacionVendedor", nullable = false)
     private Integer idInformacionendedor;
 
-    @Column(name = "idUsuario", nullable = false)
-    private Integer idUsuario;
+    @ManyToOne(fetch = FetchType.EAGER, optional = false) // Se recupera la informacion de manera pronta
+    @JoinColumn(name = "idUsuario", nullable = false)
+    private Usuario idUsuario;
 
     @Column(name ="descripcionVendedor", nullable = false, length = 45)
     private String descripcionVendedor;
