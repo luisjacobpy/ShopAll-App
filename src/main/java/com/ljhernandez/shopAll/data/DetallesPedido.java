@@ -29,5 +29,9 @@ public class DetallesPedido {
     @Column(name ="precioUnitario", nullable = false)
     private BigDecimal precioUnitario;
 
+    public BigDecimal calcularTotal() {
+        return precioUnitario.multiply(new BigDecimal(cantidad));
+    }
+
 } // Fin de la class DetallesInventario
 
