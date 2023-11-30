@@ -15,7 +15,7 @@ public class RespuestaGenerica {
     private int idGenerado;
     private List<Object> datos;
 
-    public RespuestaGenerica(){
+    public RespuestaGenerica(boolean b, String errorInterno){
         this.datos = new ArrayList<>();
     }
     public RespuestaGenerica(int codigo, boolean exito, String mensaje, int idGenerado) {
@@ -23,5 +23,12 @@ public class RespuestaGenerica {
         this.exito = exito;
         this.mensaje = mensaje;
         this.idGenerado = idGenerado;
+    }
+
+    public boolean isExito() {
+        return false;
+    }
+
+    public void setCodigo(int value) {
     }
 }

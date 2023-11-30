@@ -7,7 +7,8 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 
-@Data
+@Setter
+@Getter
 @Entity
 @Table(name = "detallesPedido")
 public class DetallesPedido {

@@ -13,7 +13,7 @@ public class CategoriaService {
     private CategoriaRepository categoriaRepository;
 
     public RespuestaGenerica guardarCategoria(CategoriaDto categoriaDto){
-        RespuestaGenerica respuesta = new RespuestaGenerica();
+        RespuestaGenerica respuesta = new RespuestaGenerica(false, "Error interno");
 
         // Crear una nueva categoría
         Categoria categoriaNueva = new Categoria();
