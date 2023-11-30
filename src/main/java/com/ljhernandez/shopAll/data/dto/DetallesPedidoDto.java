@@ -14,4 +14,5 @@ public class DetallesPedidoDto {
     private BigDecimal precioUnitario;
     private BigDecimal calcularTotal; // Agregar este campo para la cantidad total del detalle
 
+
 } // Fin de clase DetallesPedidoDto

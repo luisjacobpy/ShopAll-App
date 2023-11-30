@@ -15,7 +15,7 @@ public class Tienda {
     private Integer idTienda;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name ="idUsuario", nullable = false, length = 45)
+    @JoinColumn(name ="idUsuario", nullable = false)
     private Usuario idUsuario;
 
     @Column(name ="nombreTienda", nullable = false, length = 45)
